@@ -1,1 +1,10 @@
 <h1>todo_app</h1>
+
+<% if user_signed_in? %>
+  <div class="dropdown">
+    <%= current_user.email %>
+  </div>
+<% end %>
+
+<%= link_to 'ログイン', new_user_session_path %>
+<%= link_to 'Logout', destroy_user_session_path, method: :dele %>
