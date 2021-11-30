@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'form';
 @import 'buttons';
+@import 'board';
 
 html {
   word-spacing: 1px;
@@ -58,4 +59,5 @@ a {
 // ---- original ----
 h2 {
   font-size: 26px;
+  color: red;
 }

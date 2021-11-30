@@ -1,0 +1,46 @@
+@import 'variables';
+
+.boards_head {
+  margin-top: 17px;
+  margin-bottom: 17px;
+
+  &_head_title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.boards {
+
+  &_title {
+    margin-top: 30px;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+    color: black;
+  }
+}
+
+.board {
+  margin-top: 35px;
+  background-color: $text-filed-base-color;
+  border-radius: 10px;
+  padding-left: 17px;
+
+  &_name {
+    padding-top: 32px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  &_description {
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &_image {
+    margin-top: 29px;
+    padding-bottom: 20px
+  }
+}
