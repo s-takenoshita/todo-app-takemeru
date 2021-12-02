@@ -22,4 +22,6 @@ textarea {
   min-height: 440px;
   resize: vertical;
   border: 1px solid #EBEBEB;
+  background-color: $text-filed-base-color;
+  border-radius: 10px;
 }

@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <div class="dropdown">
-    <%= "ログインしてます => #{current_user.email}" %>
+    <%= "ログインしてます => #{current_user.email} ID => #{current_user.id}" %>
   </div>
 <% end %>
 
@@ -19,21 +19,42 @@
 <div class="container">
   <div class="boards_head">
     <div class="boards_head_title">Boards</div>
+    <div class="boards_head_image">
+      <%= image_tag 'user2.png' %>
+    </div>
   </div>
   <div class="boards">
     <div class="boards_title">All Boards</div>
-  </div>
-  <% @boards.each do |board| %>
-    <div class="board">
-      <div class="board_name">
-        <%= board.name %>
+    <% @boards.each do |board| %>
+      <div class="board">
+        <div class="board_name">
+          <div class="board_name_title">
+            <%= board.name %>
+          </div>
+          <% if user_signed_in? && (current_user.id == board.user.id)  %>
+            <div class="board_name_menu">
+              <div class="dropdown">
+                <%= image_tag 'CombinedShape.png' %>
+                <div class="dropdown-content mini">
+                  <%= link_to 'Edit', edit_board_path(board) %>
+                  <%= link_to 'Delete', board_path(board), method: :delete  %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to board_path(board) do %>
+          <div class="board_description">
+            <%= board.description %>
+          </div>
+          <div class="board_image">
+            <%= image_tag 'user2.png' %>
+          </div>
+        <% end %>
       </div>
-      <div class="board_description">
-        <%= board.description %>
-      </div>
-      <div class="board_image">
-        <%= image_tag 'Oval.png' %>
-      </div>
+    <% end %>
+    <div class="boards_new">
+      <%= link_to '+ Add new board', new_board_path %>
     </div>
-  <% end %>
+  </div>
 </div>
