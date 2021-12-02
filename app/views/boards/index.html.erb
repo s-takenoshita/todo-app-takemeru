@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <div class="dropdown">
-    <%= "ログインしてます => #{current_user.email}" %>
+    <%= "ログインしてます => #{current_user.email} ID => #{current_user.id}" %>
   </div>
 <% end %>
 
@@ -31,15 +31,17 @@
           <div class="board_name_title">
             <%= board.name %>
           </div>
-          <div class="board_name_menu">
-            <div class="dropdown">
-              <%= image_tag 'CombinedShape.png' %>
-              <div class="dropdown-content mini">
-                <%= link_to 'Edit', edit_board_path(board) %>
-                <%= link_to 'Delete', board_path(board), method: :delete  %>
+          <% if user_signed_in? && (current_user.id == board.user.id)  %>
+            <div class="board_name_menu">
+              <div class="dropdown">
+                <%= image_tag 'CombinedShape.png' %>
+                <div class="dropdown-content mini">
+                  <%= link_to 'Edit', edit_board_path(board) %>
+                  <%= link_to 'Delete', board_path(board), method: :delete  %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
         <%= link_to board_path(board) do %>
           <div class="board_description">
