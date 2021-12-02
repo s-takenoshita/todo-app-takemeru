@@ -13,6 +13,10 @@ class BoardsController < ApplicationController
     @board = current_user.boards.build
   end
 
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
@@ -21,6 +25,12 @@ class BoardsController < ApplicationController
         flash.now[:error] = '保存に失敗しました'
         render :new
     end
+  end
+
+  def destroy
+    board = current_user.boards.find(params[:id])
+    board.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
   end
 
   private

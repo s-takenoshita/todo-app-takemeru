@@ -26,24 +26,30 @@
   <div class="boards">
     <div class="boards_title">All Boards</div>
     <% @boards.each do |board| %>
-      <%= link_to board_path(board) do %>
-        <div class="board">
-          <div class="board_name">
-            <div class="board_name_title">
-              <%= board.name %>
-            </div>
-            <div class="board_name_menu">
+      <div class="board">
+        <div class="board_name">
+          <div class="board_name_title">
+            <%= board.name %>
+          </div>
+          <div class="board_name_menu">
+            <div class="dropdown">
               <%= image_tag 'CombinedShape.png' %>
+              <div class="dropdown-content mini">
+                <%= link_to 'Edit', edit_board_path(board) %>
+                <%= link_to 'Delete', board_path(board), method: :delete  %>
+              </div>
             </div>
           </div>
+        </div>
+        <%= link_to board_path(board) do %>
           <div class="board_description">
             <%= board.description %>
           </div>
           <div class="board_image">
             <%= image_tag 'user2.png' %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
     <div class="boards_new">
       <%= link_to '+ Add new board', new_board_path %>
