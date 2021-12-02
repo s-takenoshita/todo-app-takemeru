@@ -19,24 +19,30 @@
 <div class="container">
   <div class="boards_head">
     <div class="boards_head_title">Boards</div>
+    <div class="boards_head_image">
+      <%= image_tag 'user2.png' %>
+    </div>
   </div>
   <div class="boards">
     <div class="boards_title">All Boards</div>
-  </div>
-  <% @boards.each do |board| %>
-    <div class="board">
-      <div class="board_name">
-        <%= board.name %>
-      </div>
-      <div class="board_description">
-        <%= board.description %>
-      </div>
-      <div class="board_image">
-        <%= image_tag 'Oval.png' %>
-      </div>
+    <% @boards.each do |board| %>
+      <%= link_to board_path(board) do %>
+        <div class="board">
+          <div class="board_name">
+            <%= board.name %>
+            <%= image_tag 'CombinedShape.png' %>
+          </div>
+          <div class="board_description">
+            <%= board.description %>
+          </div>
+          <div class="board_image">
+            <%= image_tag 'user2.png' %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="boards_new">
+      <%= link_to '+ Add new board', new_board_path %>
     </div>
-  <% end %>
-  <div class="boards_new">
-    <%= link_to '+ Add new board', new_board_path %>
   </div>
 </div>
