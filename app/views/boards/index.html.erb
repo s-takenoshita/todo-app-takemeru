@@ -29,8 +29,12 @@
       <%= link_to board_path(board) do %>
         <div class="board">
           <div class="board_name">
-            <%= board.name %>
-            <%= image_tag 'CombinedShape.png' %>
+            <div class="board_name_title">
+              <%= board.name %>
+            </div>
+            <div class="board_name_menu">
+              <%= image_tag 'CombinedShape.png' %>
+            </div>
           </div>
           <div class="board_description">
             <%= board.description %>

@@ -42,19 +42,20 @@
   background-color: $text-filed-base-color;
   border-radius: 10px;
   padding-left: 17px;
-  cursor: pointer;
 
   &_name {
     padding-top: 32px;
     font-size: 18px;
     line-height: 25px;
-    // display: flex;
+    display: flex;
+    justify-content: space-between;
   }
 
   &_description {
     padding-top: 6px;
     font-size: 14px;
     line-height: 19px;
+    // cursor: pointer;
   }
 
   &_image {
