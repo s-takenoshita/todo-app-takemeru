@@ -10,4 +10,7 @@
     <%= image_tag @board.user.avatar_image %>
   </div>
 
+  <div class="tasks_new">
+      <%= link_to '+ Add new task', new_board_task_path(@board) %>
+    </div>
 </div>
