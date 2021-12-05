@@ -16,7 +16,10 @@
     <div class="container">
       <header class="header">
         <div class="header_logos">
-          <div class="boards_head_title">Boards</div>
+          <div class="boards_head_title">
+            <%= link_to 'Boards', boards_path %>
+          </div>
+          
           <% if user_signed_in? %>
             <div class="dropdown dropdown_header">
               <%= image_tag current_user.avatar_image %>
