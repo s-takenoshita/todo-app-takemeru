@@ -1,10 +1,24 @@
 <div class="container">
 
-  <div class="board_name">
-    <%= @profile.nickname %>
-  </div>
-  <div class="board_description">
-    <%= @board.introduction %>
+  <h2>Profile</h2>
+
+  <div class="profilePage_user">
+    <div class="profilePage_user_image">
+    </div>
+  
+    <div class="profilePage_user_basicInfo">
+      <div class="profilePage_user_displayName">
+        <div class="profilePage_user_displayName">
+          <%= current_user.display_name %>
+        </div>
+        <div class="profilePage_user_actionButton">
+          <%= link_to 'Edit', edit_profile_path %>
+        </div>
+      </div>
+      <div class="profilePage_user_introduction">
+        <%= current_user.profile&.introduction %>
+      </div>
+    </div>
   </div>
 
 </div>
