@@ -18,8 +18,8 @@
         <div class="header_logos">
           <div class="boards_head_title">Boards</div>
           <% if user_signed_in? %>
-            <div class="dropdown">
-              <%= image_tag 'user2.png' %>
+            <div class="dropdown dropdown_header">
+              <%= image_tag current_user.avatar_image %>
               <div class="dropdown-content mini">
                 <%= link_to 'Profile', profile_path %>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
