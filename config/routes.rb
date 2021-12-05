@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # resources :boards, only: [:show, :new, :create, :edit]
   resources :boards
 
+  resource :profile, onry: [:show, :edit, :update]
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

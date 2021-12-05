@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h2>Profile Edit</h2>
+
+  <%= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f| %>
+    <div>
+      <%= f.label :nickname, 'ハンドルネーム' %>
+    </div>
+    <div>
+      <%= f.text_field :nickname, class: 'text' %>
+    </div>
+    <div>
+      <%= f.label :introduction, '自己紹介' %>
+    </div>
+    <div>
+      <%= f.text_area :introduction, class: 'text' %>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+
+</div>

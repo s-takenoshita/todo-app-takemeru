@@ -1,0 +1,23 @@
+@import 'variables';
+
+$image_size: 56px;
+
+.profilePage {
+  
+  &_user {
+    margin-bottom: 32px;
+
+    &_actionButton {
+      font-size: 12px;
+      border-radius: 4px;
+      border: 1px solid $primary-color;
+      font-weight: bold;
+      padding: 0px 8px;
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
+}
