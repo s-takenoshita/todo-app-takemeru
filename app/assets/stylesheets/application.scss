@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'header';
 @import 'common';
 @import 'form';
 @import 'buttons';
@@ -22,6 +23,7 @@ html {
 }
 
 body {
+  margin-top: 64px;
   height: 100%;
   background-color: $base-bg-color;
   font-size: 1em;
