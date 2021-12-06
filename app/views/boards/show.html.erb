@@ -12,6 +12,23 @@
     </div>
   </div>
 
+  <div class="sub_title">
+    Tasks
+  </div>
+  <% @tasks.each do |task| %>
+    <div class="board">
+      <div class="board_name_title">
+        <%= task.title %>
+      </div>
+      <div class="board_description">
+        <%= task.content %>
+      </div>
+      <div class="board_image">
+        <%= image_tag task.user.avatar_image %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="boards_new">
       <%= link_to '+ Add new task', new_board_task_path(@board) %>
     </div>
