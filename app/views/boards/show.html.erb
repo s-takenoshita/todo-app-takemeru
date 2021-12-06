@@ -1,13 +1,37 @@
 <div class="container">
 
-  <div class="board_name">
-    <%= @board.name %>
-  </div>
-  <div class="board_description">
-    <%= @board.description %>
-  </div>
-  <div class="board_image">
-    <%= image_tag @board.user.avatar_image %>
+  <div class="board">
+    <div class="board_name_title">
+      <%= @board.name %>
+    </div>
+    <div class="board_description">
+      <%= @board.description %>
+    </div>
+    <div class="board_image">
+      <%= image_tag @board.user.avatar_image %>
+    </div>
   </div>
 
+  <div class="sub_title">
+    Tasks
+  </div>
+  <% @tasks.each do |task| %>
+    <%= link_to board_task_path(@board, task) do %>
+      <div class="board">
+        <div class="board_name_title">
+          <%= task.title %>
+        </div>
+        <div class="board_description">
+          <%= task.content %>
+        </div>
+        <div class="board_image">
+          <%= image_tag task.user.avatar_image %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="boards_new">
+      <%= link_to '+ Add new task', new_board_task_path(@board) %>
+    </div>
 </div>

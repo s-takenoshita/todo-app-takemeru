@@ -51,6 +51,11 @@
     line-height: 25px;
     display: flex;
     justify-content: space-between;
+
+    &_title {
+      font-weight: bold;
+    }
+
   }
 
   &_description {
