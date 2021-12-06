@@ -1,10 +1,24 @@
 <div class="container">
   <h2>Show Task</h2>
 
-  <div class="task_title">
-    <%= @task.title %>
-  </div>
-  <div class="task_content">
-    <%= @task.content %>
+  <div class="board">
+    <div class="board_name">
+      <div class="board_name_title">
+        <%= @task.title %>
+      </div>
+      <div class="board_name_menu">
+        <div class="dropdown">
+          <%= image_tag 'CombinedShape.png' %>
+          <div class="dropdown-content mini">
+            <%= link_to 'Edit', edit_board_task_path(@task.board_id,@task) %>
+            <%= link_to 'Delete', board_task_path(@task), method: :delete  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board_description">
+      <%= @task.content %>
+    </div>
   </div>
 </div>
