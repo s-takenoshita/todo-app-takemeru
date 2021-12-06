@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   end
 
+  resources :comments, only: [:new, :create]
+
   resource :profile, onry: [:show, :edit, :update]
 
   devise_scope :user do
