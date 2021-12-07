@@ -1,9 +1,11 @@
 <div class="container">
-  <h2>Show Task</h2>
 
-  <div class="board">
-    <div class="board_name">
-      <div class="board_name_title">
+  <div class="card">
+    <div class="card_board_name">
+      <%= link_to @task.board_name, board_path(@task.board_id) %>
+    </div>
+    <div class="card_head">
+      <div class="card_head_title">
         <%= @task.title %>
       </div>
       <div class="board_name_menu">
@@ -17,7 +19,7 @@
       </div>
     </div>
 
-    <div class="board_description">
+    <div class="card_description">
       <%= @task.content %>
     </div>
   </div>

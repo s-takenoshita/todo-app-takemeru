@@ -6,4 +6,7 @@ class Task < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  def board_name
+    self.board.name
+  end
 end

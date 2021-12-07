@@ -1,5 +1,29 @@
 @import 'variables';
 
 .card {
-  
+
+  &_board_name {
+    font-size: 18px;
+    border-bottom: 2px solid $text-filed-base-color;
+    font-weight: bold;
+  }
+
+  &_head {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+
+    &_title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &_description {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: $text-filed-base-color;
+    border-radius: 10px;
+    
+  }
 }

@@ -4,6 +4,7 @@
 @import 'form';
 @import 'buttons';
 @import 'board';
+@import 'card';
 @import 'profile';
 @import 'comment';
 
@@ -41,6 +42,7 @@ a {
   padding: 16px 16px;
   width: 414px;
   margin: 0 auto;
+  margin-bottom: 4px;
   background: $base-cord-color;
 }
 
