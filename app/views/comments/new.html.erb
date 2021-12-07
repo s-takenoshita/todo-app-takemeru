@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>New Comment</h2>
+  <%= form_with(model: @comment, url: board_task_comments_path, method: 'post', local: true) do |f| %>
+    <div>
+      <%= f.label :content, 'Content' %>
+    </div>
+    <div>
+      <%= f.text_area :content, class: 'text' %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+</div>

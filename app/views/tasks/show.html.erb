@@ -21,4 +21,24 @@
       <%= @task.content %>
     </div>
   </div>
+
+  <div class="comment">
+    <h2 class="comment_title">Comments</h2>
+    <% @comments.each do |comment| %>
+      <%= link_to edit_board_task_comment_path(@task.board_id, @task, comment) do %>
+        <div class="comment_sec">
+          <div class="comment_sec_image">
+            <%= image_tag comment.user.avatar_image %>
+          </div>
+          <div class="comment_sec_content">
+            <%= comment.content %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="comment_new">
+      <%= link_to '+ Add new comment', new_board_task_comment_path(@task.board_id, @task) %>
+  </div>
 </div>
