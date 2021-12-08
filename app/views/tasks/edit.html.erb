@@ -11,6 +11,12 @@
 
   <%= form_with(model: @task, url: board_task_path, method: 'put', local: true) do |f| %>
     <div>
+      <%= f.label :eyecatch, 'アイキャッチ' %>
+    </div>
+    <div>
+      <%= f.file_field :eyecatch %>
+    </div>
+    <div>
       <%= f.label :title, 'Title' %>
     </div>
     <div>

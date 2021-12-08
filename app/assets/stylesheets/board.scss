@@ -40,10 +40,12 @@
 }
 
 .board {
-  margin-top: 35px;
+  margin-top: 24px;
   background-color: $text-filed-base-color;
   border-radius: 10px;
-  padding-left: 17px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   &_name {
     padding-top: 32px;
@@ -58,6 +60,13 @@
 
   }
 
+  &_eyecatch {
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
   &_description {
     padding-top: 6px;
     font-size: 14px;
@@ -75,4 +84,10 @@
       // height: $avatar-size;
     }
   }
+}
+
+.task_title {
+  margin-top: 34px;
+  font-size: 18px;
+  margin-bottom: 18px;
 }
