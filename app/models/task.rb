@@ -11,4 +11,9 @@ class Task < ApplicationRecord
   def board_name
     self.board.name
   end
+
+  def comments_count
+    comments.count
+  end
+
 end

@@ -8,7 +8,9 @@
       <%= @board.description %>
     </div>
     <div class="board_image">
-      <%= image_tag @board.user.avatar_image %>
+      <div class="board_image_avatar">
+        <%= image_tag @board.user.avatar_image %>
+      </div>
     </div>
   </div>
 
@@ -30,7 +32,17 @@
           <%= task.content %>
         </div>
         <div class="board_image">
-          <%= image_tag task.user.avatar_image %>
+          <div class="board_image_avatar">
+            <%= image_tag task.user.avatar_image %>
+          </div>
+          <div class="board_image_comments">
+            <div class="board_image_comments_count">
+              <%= task.comments_count %>
+            </div>
+            <div class="board_image_comments_img">
+              <%= image_tag 'message-square-outline.png'%>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

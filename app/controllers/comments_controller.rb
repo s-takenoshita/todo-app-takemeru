@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     @comment = task.comments.build(comments_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to board_task_path(task.id, task), notice: 'コメントを追加しました。'
+      redirect_to board_task_path(task.board_id, task), notice: 'コメントを追加しました。'
     else
       flash.now[:error] = '保存に失敗しました。'
         render :new
