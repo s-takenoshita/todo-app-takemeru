@@ -76,12 +76,28 @@
   }
 
   &_image {
-    img {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
 
-      margin-top: 12px;
-      padding-bottom: 12px;
-      width: $avatar-size;
-      // height: $avatar-size;
+    &_avatar {
+      img {
+        width: $avatar-size;
+      }
+    }
+
+    &_comments {
+      display: flex;
+      font-size: 14px;
+
+      &_count {
+        padding-top: 4px;
+        padding-right: 4px;
+      }
+      img {
+        margin-top: 4px;
+      }
     }
   }
 }
