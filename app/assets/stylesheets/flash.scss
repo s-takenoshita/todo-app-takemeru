@@ -1,0 +1,57 @@
+@import 'variables';
+
+.flash {
+  position: relative;
+  
+  &_massage {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    font-size: 12px;
+    padding: 12px;
+    text-align: center;
+    left: $container-width / 4;
+    width: $container-width / 2;
+    background: rgb(248, 246, 246);
+    z-index: 1;
+    -webkit-animation: fade-in-out;
+    animation: fade-in-out;
+    animation-duration: 3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+@-webkit-keyframes fade-in-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

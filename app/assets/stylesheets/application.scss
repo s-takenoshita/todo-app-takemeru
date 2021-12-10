@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'header';
 @import 'common';
+@import 'flash';
 @import 'form';
 @import 'buttons';
 @import 'board';
@@ -40,7 +41,7 @@ a {
 
 .container {
   padding: 16px 16px;
-  width: 414px;
+  width: $container-width;
   margin: 0 auto;
   margin-bottom: 4px;
   background: $base-cord-color;

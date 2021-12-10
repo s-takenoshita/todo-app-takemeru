@@ -8,15 +8,17 @@
       <div class="card_head_title">
         <%= @task.title %>
       </div>
-      <div class="board_name_menu">
-        <div class="dropdown">
-          <%= image_tag 'CombinedShape.png' %>
-          <div class="dropdown-content mini">
-            <%= link_to 'Edit', edit_board_task_path(@task.board_id,@task) %>
-            <%= link_to 'Delete', board_task_path(@task), method: :delete  %>
+      <% if user_signed_in? && (current_user.id == @task.user.id)  %>
+        <div class="board_name_menu">
+          <div class="dropdown">
+            <%= image_tag 'CombinedShape.png' %>
+            <div class="dropdown-content mini">
+              <%= link_to 'Edit', edit_board_task_path(@task.board_id,@task) %>
+              <%= link_to 'Delete', board_task_path(@task), method: :delete  %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <% if @task.eyecatch.attached? %>
