@@ -1,5 +1,14 @@
 <div class="container">
   <h2>New Comment</h2>
+
+  <% if @comment.errors.present? %>
+    <ul class='error_message'>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form_with(model: @comment, url: board_task_comments_path, method: 'post', local: true) do |f| %>
     <div>
       <%= f.label :content, 'Content' %>

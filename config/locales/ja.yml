@@ -7,9 +7,18 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     attributes:
-      article:
+      board:
+        name: 'ボード名'
+        description: '内容'
+      task:
         title: 'タイトル'
         content: '内容'
+      comment:
+        content: '内容'
+
+    #   article:
+    #     title: 'タイトル'
+    #     content: '内容'
   date:
     abbr_day_names:
     - 日

@@ -1,5 +1,13 @@
 @import 'variables';
 
+.error_message {
+  background-color: rgb(243, 199, 199);
+  color: red;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .dropdown_header {
 
   
