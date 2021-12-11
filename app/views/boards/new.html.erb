@@ -1,5 +1,12 @@
 <div class="container">
   <h2>New Board</h2>
+  <% if @board.errors.present? %>
+    <ul class='error_message'>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_with(model: @board, url: boards_path, method: 'post', local: true) do |f| %>
     <div>
       <%= f.label :name, 'Name' %>

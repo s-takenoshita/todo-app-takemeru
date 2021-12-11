@@ -1,13 +1,15 @@
 <div class="container">
   <h2>new task</h2>
 
-  <ul>
-    <% @task.errors.full_messages.each do |message| %>
-      <li>
-        <%= message %>
-      </li>
-    <% end %>
-  </ul>
+  <% if @task.errors.present? %>
+    <ul class='error_message'>
+      <% @task.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <%= form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f| %>
     <div>
